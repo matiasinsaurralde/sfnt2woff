@@ -132,11 +132,6 @@ main(int argc, char * argv[])
   argc -= optind;
   argv += optind;
 
-//  if (argc != 1) {
-//    usage(progName);
-//    exit(1);
-//  }
-
   uint32_t sfntLen;
   const uint8_t * sfntData = readFile(argv[0], &sfntLen);
 
@@ -171,19 +166,8 @@ main(int argc, char * argv[])
     woffPrintStatus(stderr, status, "### ");
   }
 
-  char * outName = (char *) malloc(strlen(argv[0]) + 8);
-  if (!outName)
-    die("malloc failure");
-  strcpy(outName, argv[0]);
-  char * ext = strrchr(outName, '.');
-  if (ext && (!strcmp(ext, ".ttf") || !strcmp(ext, ".otf")))
-    *ext = 0;
-  strcat(outName, ".woff");
-
   if (woffData) {
-    // FILE * outFile = fopen(outName, "wb");
     FILE * outFile = fopen( destFile, "wb");
-    free(outName);
     if (!outFile)
       die("unable to open output file");
     if (fwrite(woffData, 1, woffLen, outFile) != woffLen)
