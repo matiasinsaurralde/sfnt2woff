@@ -120,12 +120,12 @@ main(int argc, char *argv[])
   }
 
   if (data) {
-    if (fwrite(data, 1, len, stdout) != len)
+    if (fwrite(data, 1, len, stdout) != len) {
       die("error writing metadata to output");
       free((void *) data);
     } else {
       printf("<!-- No WOFF metadata available. -->\n");
-   }
+    }
   }
 
   if (WOFF_WARNING(status)) {
