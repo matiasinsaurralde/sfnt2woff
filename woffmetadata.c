@@ -26,14 +26,8 @@ static void
 usage(const char * progName)
 {
   fprintf(stderr, "Usage:\n"
-                  "  %s [-v | -m | -p] <woff>\n"
-                  "    decode WOFF file <woff>, writing OpenType data to stdout\n"
-                  "Options (instead of decoding to OpenType format)\n"
-                  "    -v   write font version to stdout\n"
-                  "    -m   write WOFF metadata block to stdout\n"
-                  "    -p   write private data block to stdout\n"
-                  "Note: only one of -v, -m, -p may be used at a time.\n"
-                  , progName);
+                  "  %s <woff>\n"
+                  "    decode WOFF file <woff>, writing OpenType data to stdout\n", progName);
 }
 
 const uint8_t *
