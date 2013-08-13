@@ -1,3 +1,5 @@
 sfnt2woff
 *.o
 woff2sfnt
+*.ttf
+*.woff
