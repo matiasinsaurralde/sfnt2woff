@@ -62,37 +62,6 @@ main(int argc, char *argv[])
   const char * progName = argv[0];
   uint32_t status = eWOFF_ok;
 
-  int opt;
-  int option = 0;
-  while ((opt = getopt(argc, argv, "vmph")) != -1) {
-    switch (opt) {
-    case 'v':
-      if (option)
-        fprintf(stderr, "# ignoring option '%c', already got '%c'\n", opt, option);
-      else
-        option = 'v';
-      break;
-    case 'm':
-      if (option)
-        fprintf(stderr, "# ignoring option '%c', already got '%c'\n", opt, option);
-      else
-        option = 'm';
-      break;
-    case 'p':
-      if (option)
-        fprintf(stderr, "# ignoring option '%c', already got '%c'\n", opt, option);
-      else
-        option = 'p';
-      break;
-    case 'h':
-    case '?':
-      usage(progName);
-      exit(0);
-    default:
-      fprintf(stderr, "# unknown option '%c'\n", opt);
-      break;
-    }
-  }
   argc -= optind;
   argv += optind;
 
