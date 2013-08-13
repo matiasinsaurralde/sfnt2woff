@@ -11,6 +11,3 @@ sfnt2woff.o: sfnt2woff.c woff.h Makefile
 woff2sfnt.o: woff2sfnt.c woff.h Makefile
 
 woff.o: woff.c woff.h woff-private.h Makefile
-
-clean:
-	$(RM) -r *.o *.dSYM

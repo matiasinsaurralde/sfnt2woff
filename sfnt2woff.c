@@ -101,6 +101,7 @@ main(int argc, char * argv[])
   const char * progName = argv[0];
   const char * metadataFile = NULL;
   const char * privateFile = NULL;
+  const char * destFile = argv[2];
   unsigned int maj = 0, min = 0;
   uint32_t status = eWOFF_ok;
 
