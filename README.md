@@ -1,5 +1,5 @@
 # sfnt2woff
-----
+
 The original author of these tools is Jonathan Kew from Mozilla. I needed to simplify and adjust some tools for backend use.
 
 The main binary now accepts a customized path as destination. Also a tool for directly outputting font metadata is provided under an obvious name: woffmetadata.
