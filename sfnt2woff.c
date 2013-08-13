@@ -132,10 +132,10 @@ main(int argc, char * argv[])
   argc -= optind;
   argv += optind;
 
-  if (argc != 1) {
-    usage(progName);
-    exit(1);
-  }
+//  if (argc != 1) {
+//    usage(progName);
+//    exit(1);
+//  }
 
   uint32_t sfntLen;
   const uint8_t * sfntData = readFile(argv[0], &sfntLen);
@@ -181,7 +181,8 @@ main(int argc, char * argv[])
   strcat(outName, ".woff");
 
   if (woffData) {
-    FILE * outFile = fopen(outName, "wb");
+    // FILE * outFile = fopen(outName, "wb");
+    FILE * outFile = fopen( destFile, "wb");
     free(outName);
     if (!outFile)
       die("unable to open output file");
