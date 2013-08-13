@@ -1,9 +1,12 @@
-all: sfnt2woff woff2sfnt
+all: sfnt2woff woff2sfnt woffmetadata
 
 sfnt2woff: sfnt2woff.o woff.o woff.h Makefile
 	$(CC) $(LDFLAGS) -o $@ $< woff.o -lz
 
 woff2sfnt: woff2sfnt.o woff.o woff.h Makefile
+	$(CC) $(LDFLAGS) -o $@ $< woff.o -lz
+
+woffmetadata: woffmetadata.o
 	$(CC) $(LDFLAGS) -o $@ $< woff.o -lz
 
 sfnt2woff.o: sfnt2woff.c woff.h Makefile
